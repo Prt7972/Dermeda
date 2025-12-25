@@ -1,7 +1,10 @@
-
 import React, { useState } from 'react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onLogoClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
@@ -11,11 +14,20 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (onLogoClick) {
+      e.preventDefault();
+      onLogoClick();
+      // Also navigate to top of page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center h-20 md:h-24">
-          <a href="#" className="flex items-center gap-4 group">
+          <a href="/" onClick={handleLogoClick} className="flex items-center gap-4 group">
             <div className="flex flex-col">
               <span className="text-3xl md:text-4xl font-black text-[#004fa3] tracking-tighter leading-none group-hover:opacity-80 transition-opacity font-header">DERMEDA</span>
               <span className="text-[9px] md:text-[11px] font-black text-white bg-[#004fa3] px-2 py-1 mt-1.5 tracking-[0.2em] uppercase text-center rounded shadow-sm">Medical Solutions</span>
@@ -29,6 +41,7 @@ const Header: React.FC = () => {
                 key={link.name} 
                 href={link.href} 
                 className="hover:text-[#004fa3] transition-all py-2 relative group"
+                onClick={onLogoClick ? () => onLogoClick() : undefined}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#004fa3] transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -84,7 +97,10 @@ const Header: React.FC = () => {
                 <a 
                   key={link.name} 
                   href={link.href} 
-                  onClick={() => setIsMenuOpen(false)} 
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    if (onLogoClick) onLogoClick();
+                  }} 
                   className="text-3xl font-black text-slate-900 hover:text-[#004fa3] transition-all uppercase tracking-tighter font-header"
                 >
                   {link.name}

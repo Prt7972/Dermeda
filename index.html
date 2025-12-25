@@ -28,6 +28,7 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
+      background-color: #f8fafc;
     }
     
     h1, h2, h3, h4, h5, h6, .brand-font {
@@ -41,24 +42,22 @@
     
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.active,
-    :target .reveal,
-    .reveal:target { 
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+    .reveal.active { 
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     .glass {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     @keyframes marquee {
@@ -76,8 +75,15 @@
       animation: marquee 25s linear infinite;
     }
 
-    .marquee-container:hover .animate-marquee {
-      animation-play-state: paused;
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slide-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+    .animate-slide-up { animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* Custom Mobile UI Fixes */
+    @media (max-width: 640px) {
+      .mobile-padding-x { padding-left: 1.25rem; padding-right: 1.25rem; }
     }
   </style>
 <script>
@@ -94,11 +100,11 @@
 }
 </script>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-white text-slate-900">
   <div id="root"></div>
   <script type="module" src="index.tsx"></script>
   <script>
-    const observerOptions = { threshold: 0.05, rootMargin: "0px 0px -50px 0px" };
+    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -109,25 +115,13 @@
 
     const observeElements = () => {
       document.querySelectorAll('.reveal').forEach(el => {
-        if (!el.classList.contains('active')) {
-          observer.observe(el);
-        }
+        observer.observe(el);
       });
     };
     
     window.addEventListener('scroll', observeElements, { passive: true });
     window.addEventListener('load', observeElements);
-    window.addEventListener('hashchange', () => {
-      observeElements();
-      const hash = window.location.hash;
-      if (hash) {
-        const target = document.querySelector(hash);
-        if (target) {
-          target.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-        }
-      }
-    });
-    setInterval(observeElements, 1500);
+    setInterval(observeElements, 1000);
   </script>
 </body>
 </html>

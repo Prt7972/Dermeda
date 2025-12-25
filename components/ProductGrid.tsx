@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { PRODUCTS } from '../constants';
 import { ProductCategory, Product } from '../types';
 import ProductCard from './ProductCard';
-import ProductModal from './ProductModal';
 
-const ProductGrid: React.FC = () => {
+interface ProductGridProps {
+  onSelectProduct: (product: Product) => void;
+}
+
+const ProductGrid: React.FC<ProductGridProps> = ({ onSelectProduct }) => {
   const [activeTab, setActiveTab] = useState<ProductCategory | 'All'>('All');
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [notification, setNotification] = useState<string | null>(null);
   
   const categories: (ProductCategory | 'All')[] = ['All', 'Gloves', 'Elbow Gloves', 'Disposable Products', 'Sanitizer'];
@@ -19,15 +21,6 @@ const ProductGrid: React.FC = () => {
     setNotification(`Inquiry for ${productName} added to quote request.`);
     setTimeout(() => setNotification(null), 3000);
   };
-
-  useEffect(() => {
-    if (selectedProduct) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [selectedProduct]);
 
   return (
     <section className="py-12 md:py-32 bg-white scroll-mt-24 relative">
@@ -68,7 +61,7 @@ const ProductGrid: React.FC = () => {
               <div key={product.id} className="flex flex-col h-full">
                 <ProductCard 
                   product={product} 
-                  onSelect={setSelectedProduct} 
+                  onSelect={onSelectProduct} 
                   onQuote={handleRequestQuote} 
                 />
               </div>
@@ -76,14 +69,6 @@ const ProductGrid: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {selectedProduct && (
-        <ProductModal 
-          product={selectedProduct} 
-          onClose={() => setSelectedProduct(null)} 
-          onQuote={handleRequestQuote} 
-        />
-      )}
 
       {notification && (
         <div className="fixed bottom-24 right-4 left-4 md:bottom-12 md:right-12 md:left-auto z-[250] animate-slide-up">
