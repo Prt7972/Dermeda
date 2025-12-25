@@ -3,20 +3,20 @@ import React, { useState, useEffect } from 'react';
 
 const SLIDES = [
   {
-    type: 'video',
-    url: 'https://assets.mixkit.co/videos/preview/mixkit-scientist-working-in-a-laboratory-41220-large.mp4',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
     title: 'Precision Manufacturing',
     subtitle: 'ISO 13485 Certified'
   },
   {
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000',
+    url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200',
     title: 'Advanced Protection',
     subtitle: 'Nitrile Technology'
   },
   {
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000',
+    url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200',
     title: 'Clinical Reliability',
     subtitle: 'Global Supply'
   }
@@ -72,25 +72,13 @@ const Hero: React.FC = () => {
                     index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                   }`}
                 >
-                  {slide.type === 'video' ? (
-                    <video 
-                      autoPlay 
-                      muted 
-                      loop 
-                      playsInline 
-                      className={`w-full h-full object-cover ${index === currentSlide ? 'animate-ken-burns' : ''}`}
-                    >
-                      <source src={slide.url} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <img 
-                      src={slide.url} 
-                      alt={slide.title} 
-                      className={`w-full h-full object-cover ${index === currentSlide ? 'animate-ken-burns' : ''}`} 
-                    />
-                  )}
+                  <img 
+                    src={slide.url} 
+                    alt={slide.title} 
+                    className={`w-full h-full object-cover ${index === currentSlide ? 'animate-ken-burns' : ''}`} 
+                  />
                   {/* Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 glass p-4 md:p-8 rounded-2xl md:rounded-3xl text-[#004fa3] transform transition-transform duration-700 delay-300">
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 glass p-4 md:p-8 rounded-2xl md:rounded-3xl text-[#004fa3] transform transition-transform duration-700 delay-300 shadow-xl border border-white/40">
                     <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] text-[#f58220] mb-1">{slide.subtitle}</p>
                     <h3 className="text-lg md:text-2xl font-black uppercase tracking-tighter">{slide.title}</h3>
                   </div>
@@ -116,8 +104,8 @@ const Hero: React.FC = () => {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes ken-burns {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.15); }
+          0% { transform: scale(1.05); }
+          100% { transform: scale(1.2); }
         }
         .animate-ken-burns {
           animation: ken-burns 12s ease-out forwards;

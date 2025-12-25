@@ -2,7 +2,11 @@
 import { GoogleGenAI } from "@google/genai";
 import { PRODUCTS } from "../constants";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const getAIClient = () => {
+  // Use optional chaining or fallback to prevent ReferenceErrors in browser
+  const apiKey = (typeof process !== 'undefined' && process.env?.API_KEY) || "";
+  return new GoogleGenAI({ apiKey });
+};
 
 const SYSTEM_PROMPT = `You are "CuraBot", the Lead Medical Product Specialist for Dermeda Medical. 
 Your role is to provide rapid, technical, and high-impact advice to healthcare procurement professionals.
@@ -25,18 +29,19 @@ Communication Protocol (Crucial):
 
 export async function getGloveRecommendation(userPrompt: string) {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: userPrompt,
       config: {
         systemInstruction: SYSTEM_PROMPT,
-        temperature: 0.2, // Even lower for maximum precision and brevity
+        temperature: 0.2,
       },
     });
 
     return response.text || "Technical error. Please contact procurement@dermeda.medical directly.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Database offline. Please refer to the technical specs table below or contact support.";
+    return "The AI advisor is currently offline. Please refer to our technical specification sheets in the catalog or contact support.";
   }
 }

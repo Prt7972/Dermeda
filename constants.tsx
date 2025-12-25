@@ -10,7 +10,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['DLG-M100', 'DLG-L100', 'DLG-S100', 'DLG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Low Protein Content', 'High Tensile Strength', 'Micro-textured for grip'],
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1603807662859-adc3230cf3e6?auto=format&fit=crop&q=80&w=800',
     specs: {
       type: 'Powder-Free, Non-Sterile',
       material: 'Natural Rubber Latex',
@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['DNG-M100', 'DNG-L100', 'DNG-S100', 'DNG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Accelerator Free', 'Finger-tip textured', 'Chemotherapy Drug Tested'],
-    image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
     specs: {
       type: 'Powder-Free, Synthetic Nitrile',
       material: 'Carboxylated Butadiene Nitrile',
@@ -54,7 +54,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['EG14', 'EG16', 'EG18', 'EG20'],
     sizes: ['14"', '16"', '18"', '20"'],
     features: ['Extra Long Cuff', 'Anatomically Shaped', 'High Durability'],
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1579154235884-332023080e81?auto=format&fit=crop&q=80&w=800',
     specs: {
       type: 'Long-Cuff Surgical Grade',
       material: 'Natural Rubber Latex',
@@ -75,7 +75,7 @@ export const PRODUCTS: Product[] = [
     category: 'Disposable Products',
     description: 'Triple-layer SMS fabric providing fluid resistance and breathability.',
     productCodes: ['DBG45'],
-    image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800',
     specs: {
       type: 'SMS Protective (45 GSM)',
       material: 'Spunbond-Meltblown-Spunbond Polypropylene',

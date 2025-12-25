@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-[#004fa3] text-white pt-24 pb-12 overflow-hidden relative">
+    <footer id="contact" className="bg-[#004fa3] text-white pt-24 pb-28 md:pb-12 overflow-hidden relative scroll-mt-24">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-800 skew-x-12 transform translate-x-1/2 opacity-20"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -17,10 +17,11 @@ const Footer: React.FC = () => {
               Trusted global provider of high-grade medical examination gloves and hospital disposables. Our products are engineered for precision and engineered for safety.
             </p>
             <div className="mt-8 flex gap-4">
-               <div className="bg-white p-2 rounded-lg">
-                 <img src="https://img.icons8.com/color/48/000000/iso.png" className="h-8 w-auto grayscale" alt="ISO" />
+               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-xl flex items-center justify-center gap-2">
+                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                 <span className="text-[10px] font-black tracking-widest uppercase">ISO Certified</span>
                </div>
-               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2 rounded-lg flex items-center justify-center px-4">
+               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-2.5 rounded-xl flex items-center justify-center px-4">
                  <span className="text-xl font-black tracking-widest">CE</span>
                </div>
             </div>
@@ -29,20 +30,20 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <h4 className="text-lg font-black mb-8 uppercase tracking-widest text-[#f58220]">Gloves</h4>
             <ul className="space-y-4 text-blue-100 text-sm font-medium">
-              <li><a href="#" className="hover:text-white transition-colors">Latex Exam</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Nitrile Grade</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Vinyl Solutions</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Elbow Range</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Latex Exam</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Nitrile Grade</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Vinyl Solutions</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Elbow Range</a></li>
             </ul>
           </div>
           
           <div className="lg:col-span-3">
             <h4 className="text-lg font-black mb-8 uppercase tracking-widest text-[#f58220]">Disposables</h4>
             <ul className="space-y-4 text-blue-100 text-sm font-medium">
-              <li><a href="#" className="hover:text-white transition-colors">Drape Sheets</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Infusion Sets</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Surgical Gowns</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Respirometers</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Drape Sheets</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Infusion Sets</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Surgical Gowns</a></li>
+              <li><a href="#products" className="hover:text-white transition-colors">Respirometers</a></li>
             </ul>
           </div>
           
