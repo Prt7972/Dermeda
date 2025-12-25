@@ -68,7 +68,7 @@ const ProductGrid: React.FC = () => {
               <div key={product.id} className="group flex flex-col bg-white rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-[0_40px_80px_-15px_rgba(0,79,163,0.15)] transition-all duration-500">
                 <div className="relative h-56 md:h-72 overflow-hidden bg-slate-50">
                   <img 
-                    src={`${product.image}&w=600&q=75&auto=format`} 
+                    src={`${product.image}&auto=format&fit=crop&w=600`} 
                     alt={product.name} 
                     loading="lazy" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
@@ -152,7 +152,7 @@ const ProductGrid: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-8 md:gap-12">
                 <div className="md:col-span-1">
                    <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100 border border-slate-100 mb-6">
-                     <img src={selectedProduct.image} alt={selectedProduct.name} className="w-full h-full object-cover" />
+                     <img src={`${selectedProduct.image}&auto=format&fit=crop&w=800`} alt={selectedProduct.name} className="w-full h-full object-cover" />
                    </div>
                    <div className="space-y-4">
                       <h4 className="text-[10px] font-black uppercase tracking-widest text-[#004fa3]">Available Sizes</h4>
