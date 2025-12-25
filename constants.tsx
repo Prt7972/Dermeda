@@ -1,16 +1,15 @@
-
 import { Product } from './types';
 
 export const PRODUCTS: Product[] = [
   {
     id: 'latex-exam',
-    name: 'Dermeda Latex Examination Gloves',
+    name: 'Dermeda Latex Surgical Grade',
     category: 'Gloves',
-    description: 'High-sensitivity, palm-textured, beaded cuff medical examination gloves for superior tactile feel.',
+    description: 'High-sensitivity, palm-textured, beaded cuff medical examination gloves for superior tactile feel in surgical environments.',
     productCodes: ['DLG-M100', 'DLG-L100', 'DLG-S100', 'DLG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Low Protein Content', 'High Tensile Strength', 'Micro-textured for grip'],
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5',
     specs: {
       type: 'Powder-Free, Non-Sterile',
       material: 'Natural Rubber Latex',
@@ -26,13 +25,13 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'nitrile-gloves',
-    name: 'Dermeda Nitrile Examination Gloves',
+    name: 'Dermeda Nitrile Protective',
     category: 'Gloves',
-    description: 'Superior barrier protection against chemicals and blood-borne pathogens. 100% Latex-Free.',
+    description: 'Superior barrier protection against chemicals and blood-borne pathogens. 100% Latex-Free for high-risk surgical procedures.',
     productCodes: ['DNG-M100', 'DNG-L100', 'DNG-S100', 'DNG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Accelerator Free', 'Finger-tip textured', 'Chemotherapy Drug Tested'],
-    image: 'https://images.unsplash.com/photo-1619191163420-4a7c0f99b92e?q=80',
+    image: 'https://images.unsplash.com/photo-1619191163420-4a7c0f99b92e',
     specs: {
       type: 'Powder-Free, Synthetic Nitrile',
       material: 'Carboxylated Butadiene Nitrile',
@@ -48,13 +47,13 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'elbow-latex',
-    name: 'Latex Powder Free Elbow Gloves',
+    name: 'Dermeda Extended Elbow Latex',
     category: 'Elbow Gloves',
-    description: 'Extended protection length for gynecology, orthopedic, and deep wound procedures.',
+    description: 'Extended protection length for gynecology, orthopedic, and deep wound surgical procedures.',
     productCodes: ['EG14', 'EG16', 'EG18', 'EG20'],
     sizes: ['14"', '16"', '18"', '20"'],
     features: ['Extra Long Cuff', 'Anatomically Shaped', 'High Durability'],
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514',
     specs: {
       type: 'Long-Cuff Surgical Grade',
       material: 'Natural Rubber Latex',
@@ -71,11 +70,11 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'blue-gown',
-    name: 'Dermeda SMS Protective Gown',
+    name: 'Surgical SMS Protective Gown',
     category: 'Disposable Products',
-    description: 'Triple-layer SMS fabric providing fluid resistance and breathability.',
+    description: 'Triple-layer SMS fabric providing fluid resistance and breathability for sterile environments.',
     productCodes: ['DBG45'],
-    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80',
+    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50',
     specs: {
       type: 'SMS Protective (45 GSM)',
       material: 'Spunbond-Meltblown-Spunbond Polypropylene',
@@ -88,10 +87,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'sanitizer',
-    name: 'Assail Clinical Hand Sanitizer',
+    name: 'Assail Clinical Hand Scrub',
     category: 'Sanitizer',
-    description: '75% Isopropyl Alcohol based surgical hand rub with skin emollients.',
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80',
+    description: '75% Isopropyl Alcohol based surgical hand rub with skin emollients for pre-operative use.',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309',
     specs: {
       type: 'Liquid Hand Rub',
       material: '75% v/v Isopropyl Alcohol',

@@ -1,24 +1,23 @@
-
 import React, { useState, useEffect } from 'react';
 
 const SLIDES = [
   {
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80',
-    title: 'Precision Manufacturing',
+    url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514',
+    title: 'Precision Surgical Gear',
     subtitle: 'ISO 13485 Certified'
   },
   {
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80',
-    title: 'Advanced Protection',
-    subtitle: 'Nitrile Technology'
+    url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a',
+    title: 'Sterile Barrier Tech',
+    subtitle: 'Advanced Nitrile'
   },
   {
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1619191163420-4a7c0f99b92e?q=80',
-    title: 'Clinical Reliability',
-    subtitle: 'Global Supply'
+    url: 'https://images.unsplash.com/photo-1619191163420-4a7c0f99b92e',
+    title: 'Hospital Disposables',
+    subtitle: 'Global Reliability'
   }
 ];
 
@@ -40,24 +39,24 @@ const Hero: React.FC = () => {
           <div className="w-full text-center lg:text-left lg:col-span-6 relative z-30 mb-8 lg:mb-0">
             <div className="inline-flex items-center gap-2 md:gap-3 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-blue-100/80 backdrop-blur-md text-[#004fa3] text-[9px] md:text-xs font-black uppercase tracking-[0.1em] md:tracking-[0.15em] mb-4 md:mb-8 shadow-sm border border-blue-200">
               <span className="flex h-2 w-2 md:h-3 md:w-3 rounded-full bg-[#f58220] animate-pulse"></span>
-              Live Batch Verification Active
+              Sterile Batch Verification Active
             </div>
             
             <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-6xl xl:text-8xl font-black text-slate-900 leading-[1] md:leading-[0.9] mb-4 md:mb-6 tracking-tighter font-header uppercase">
-              GLOBAL <span className="text-[#004fa3]">BARRIER</span><br className="hidden md:block"/>
-              SOLUTIONS.
+              PREMIUM <span className="text-[#004fa3]">SURGICAL</span><br className="hidden md:block"/>
+              PROTECTION.
             </h1>
             
             <p className="text-sm sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium mb-8 md:mb-10 tracking-wide px-1 md:px-0">
-              Premier manufacturer of medical examination gloves and hospital disposables, serving the world's healthcare networks.
+              Specialized manufacturer of medical-grade gloves and sterile hospital disposables, engineered for the highest clinical standards.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-5 justify-center lg:justify-start">
               <a href="#products" className="inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 bg-[#004fa3] text-white text-[12px] md:text-lg font-black rounded-xl md:rounded-2xl shadow-2xl hover:bg-blue-800 transition-all uppercase tracking-[0.15em] md:tracking-[0.2em] active:scale-95">
-                Explore Catalog
+                Explore Products
               </a>
               <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 md:px-10 md:py-5 border-2 border-slate-200 text-[12px] md:text-lg font-black rounded-xl md:rounded-2xl text-slate-700 bg-white hover:border-[#004fa3] transition-all uppercase tracking-[0.15em] md:tracking-[0.2em] active:scale-95">
-                B2B Inquiries
+                Bulk Inquiries
               </a>
             </div>
           </div>
@@ -72,7 +71,7 @@ const Hero: React.FC = () => {
                   }`}
                 >
                   <img 
-                    src={`${slide.url}&auto=format&fit=crop&w=1200`} 
+                    src={`${slide.url}?auto=format&fit=crop&w=1200&q=80`} 
                     alt={slide.title} 
                     className={`w-full h-full object-cover ${index === currentSlide ? 'animate-ken-burns' : ''}`} 
                   />

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Product } from '../types';
 
@@ -9,11 +8,15 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect, onQuote }) => {
+  const imageUrl = product.image.includes('?') 
+    ? `${product.image}&auto=format&fit=crop&w=600&q=80` 
+    : `${product.image}?auto=format&fit=crop&w=600&q=80`;
+
   return (
     <div className="group flex flex-col h-full bg-white rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-slate-100 hover:shadow-[0_40px_80px_-15px_rgba(0,79,163,0.15)] transition-all duration-500 w-full max-w-full">
       <div className="relative h-48 sm:h-56 md:h-72 overflow-hidden bg-slate-50 flex-shrink-0">
         <img 
-          src={`${product.image}&auto=format&fit=crop&w=600`} 
+          src={imageUrl} 
           alt={product.name} 
           loading="lazy" 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
