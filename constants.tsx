@@ -10,7 +10,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['DLG-M100', 'DLG-L100', 'DLG-S100', 'DLG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Low Protein Content', 'High Tensile Strength', 'Micro-textured for grip'],
-    image: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80',
     specs: {
       type: 'Powder-Free, Non-Sterile',
       material: 'Natural Rubber Latex',
@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['DNG-M100', 'DNG-L100', 'DNG-S100', 'DNG-EX100'],
     sizes: ['XS', 'S', 'M', 'L'],
     features: ['Accelerator Free', 'Finger-tip textured', 'Chemotherapy Drug Tested'],
-    image: 'https://images.unsplash.com/photo-1603807662859-adc3230cf3e6?q=80',
+    image: 'https://images.unsplash.com/photo-1619191163420-4a7c0f99b92e?q=80',
     specs: {
       type: 'Powder-Free, Synthetic Nitrile',
       material: 'Carboxylated Butadiene Nitrile',
@@ -54,7 +54,7 @@ export const PRODUCTS: Product[] = [
     productCodes: ['EG14', 'EG16', 'EG18', 'EG20'],
     sizes: ['14"', '16"', '18"', '20"'],
     features: ['Extra Long Cuff', 'Anatomically Shaped', 'High Durability'],
-    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80',
     specs: {
       type: 'Long-Cuff Surgical Grade',
       material: 'Natural Rubber Latex',
@@ -75,7 +75,7 @@ export const PRODUCTS: Product[] = [
     category: 'Disposable Products',
     description: 'Triple-layer SMS fabric providing fluid resistance and breathability.',
     productCodes: ['DBG45'],
-    image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?q=80',
+    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80',
     specs: {
       type: 'SMS Protective (45 GSM)',
       material: 'Spunbond-Meltblown-Spunbond Polypropylene',
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: 'Assail Clinical Hand Sanitizer',
     category: 'Sanitizer',
     description: '75% Isopropyl Alcohol based surgical hand rub with skin emollients.',
-    image: 'https://images.unsplash.com/photo-1584483766114-2cea6facdf57?q=80',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80',
     specs: {
       type: 'Liquid Hand Rub',
       material: '75% v/v Isopropyl Alcohol',
