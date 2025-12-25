@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermeda | Global Barrier Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Performance: Preconnect to external CDNs -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://esm.sh">
+
+  <!-- New Fonts: Glory (Modern/Clean) and Tenor Sans (Elegant/Glyphic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --dermeda-blue: #004fa3;
+      --dermeda-orange: #f58220;
+    }
+
+    body {
+      font-family: 'Glory', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6, .brand-font {
+      font-family: 'Tenor Sans', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .dermeda-blue { color: var(--dermeda-blue); }
+    .bg-dermeda-blue { background-color: var(--dermeda-blue); }
+    .dermeda-orange { color: var(--dermeda-orange); }
+    .bg-dermeda-orange { background-color: var(--dermeda-orange); }
+    
+    .hex-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23004fa3' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9l10.99-6.35 11 6.35v12.7l-11 6.35L3 30.6V17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.65v2.35zm0 18.7l12.98 7.5V49h-2v-6.35L0 36.35v-2.65zM28 15l-12.98-7.5V0h2v6.35L28 12.65v2.35zm0 18.7l-12.98 7.5V49h2v-6.35L28 36.35v-2.65z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .medical-gradient {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+    }
+
+    /* Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Hide Scrollbar */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Glassmorphism utility */
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <div id="root"></div>
+  <script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const observeElements = () => {
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    };
+    
+    window.addEventListener('scroll', observeElements, { passive: true });
+    setInterval(observeElements, 2000);
+  </script>
+</body>
+</html>
